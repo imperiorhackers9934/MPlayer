@@ -9,7 +9,7 @@ import os
 root = Tk()
 root.geometry("800x300")
 root.resizable(False, False)
-root.title("Audio Player - V-0.1")
+root.title("Audio Player - V-0.1 (Beta)")
 v1 = DoubleVar()
 ico = Image.open('Icon.png')
 ick = ImageTk.PhotoImage(ico)
@@ -33,6 +33,16 @@ def play(song):
     y["state"] = "normal"
     z["state"] = "disabled"
     play.audio = MP3(song)
+    
+#Event Functions    
+def my1(event):
+    global condn
+    condn = False
+def my2(event):
+    global condn
+    condn = True
+    myposn()
+
 #Select a Song
 def open():
     filepath = fd.askdirectory(
@@ -57,12 +67,7 @@ def open():
 def cposn(event):
     a = s1.get()
     mixer.music.set_pos(a)
-    global condn
-    if(event):
-        condn = True
-    else:
-        condn = False
-        myposn()
+    
     
 #Sets the maximum value of Slidebar according to time of song     
 def gposn():
@@ -77,10 +82,9 @@ def myposn():
         if mixer.music.get_busy():
             s1.set(current/1000)
             root.after(1000,lambda:myposn())
-            a.after(1000,lambda:myposn())
+            #a.after(1000,lambda:myposn())
         #elif(current/1000 == gposn.length_in_secs):
-    #    stop()
-    
+    #    stop()    
     
 #For Getting full path of Song and Playing it
 def select():
@@ -117,9 +121,10 @@ y["state"] = "disabled"
 
 
 
-s1 = Scale( root, variable = v1,from_ = 0, to = 0,orient = VERTICAL, command=cposn)
+s1 = Scale( root, variable = v1,from_ = 0, to = 0,orient = VERTICAL, command=cposn, length=230)
 s1.place(x=320,y=10)
-
+s1.bind('<Button-1>',my1)
+s1.bind('<ButtonRelease-1>',my2)
 mylist = Listbox(root,yscrollcommand=sb.set,width=62,height=18,selectmode=SINGLE)
 mylist.place(x=390,y=0)  
 
