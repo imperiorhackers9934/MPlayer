@@ -30,7 +30,7 @@ cd MPlayer
 
 ```bash
 python3 setup.py
-python3 mplayer.py
+python3 player.py
 ```
 
 #### On Windows
@@ -39,7 +39,7 @@ Use the provided Visual Studio solution or run:
 
 ```cmd
 python setup.py
-python mplayer.py
+python player.py
 ```
 
 ## Usage
@@ -47,7 +47,7 @@ python mplayer.py
 Run MPlayer from the command line or use the provided graphical interface:
 
 ```bash
-python mplayer.py
+python player.py
 ```
 
 ## Contributing
