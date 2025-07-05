@@ -15,9 +15,7 @@ MPlayer is a multimedia player application designed to offer a flexible, efficie
 ### Prerequisites
 
 - [Git](https://git-scm.com/)
-- [C/C++ Compiler] (if native code is used)
 - [Python 3.x](https://www.python.org/) (if scripts or tools are provided)
-- [FFmpeg](https://ffmpeg.org/) (for advanced media format support)
 
 ### Clone the Repository
 
@@ -31,8 +29,8 @@ cd MPlayer
 #### On Linux/macOS
 
 ```bash
-make
-./mplayer
+python3 setup.py
+python3 mplayer.py
 ```
 
 #### On Windows
@@ -40,30 +38,17 @@ make
 Use the provided Visual Studio solution or run:
 
 ```cmd
-build.bat
-mplayer.exe
+python setup.py
+python mplayer.py
 ```
-
-> **Note:** Please refer to `INSTALL.md` (if available) for platform-specific instructions.
 
 ## Usage
 
 Run MPlayer from the command line or use the provided graphical interface:
 
 ```bash
-./mplayer [options] <media file>
+python mplayer.py
 ```
-
-**Example:**
-
-```bash
-./mplayer sample.mp4
-```
-
-## Configuration
-
-- Edit the `config/` directory for advanced settings.
-- Customize themes in the `themes/` folder.
 
 ## Contributing
 
@@ -75,11 +60,6 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch: `git push origin feature/your-feature`.
 5. Open a pull request.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
