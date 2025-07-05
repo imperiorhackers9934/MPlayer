@@ -1,6 +1,6 @@
 # MPlayer
 
-MPlayer is a multimedia player application designed to offer a flexible, efficient, and user-friendly experience for playing audio and video files. This repository contains the source code, resources, and documentation needed to build and run MPlayer.
+MPlayer is a multimedia player application designed to offer a flexible, efficient, and user-friendly experience for playing audio files. This repository contains the source code, resources, and documentation needed to build and run MPlayer.
 
 ## Features
 
